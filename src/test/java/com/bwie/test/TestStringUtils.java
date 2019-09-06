@@ -9,7 +9,7 @@ import com.bwie.kangchengyu.StrUtils;
  * @author apple
  *
  */
-public class TestUtils {
+public class TestStringUtils {
 	@Test
 	public void testIsNull() {
 		String tel1=" ";

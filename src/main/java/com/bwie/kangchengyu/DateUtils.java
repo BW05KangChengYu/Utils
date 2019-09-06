@@ -68,7 +68,7 @@ public class DateUtils {
 	 * @return
 	 * @throws ParseException 
 	 */
-	public static Date getMonthEnd(Date date) throws Exception {
+	public static Date getMonthEnd(Date date) throws ParseException {
 		
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
