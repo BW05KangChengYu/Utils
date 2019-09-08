@@ -189,8 +189,9 @@ public class StrUtils {
 	}
 	
 	/**
-	 * 	12.周考技能用
-	 * @param str
+	 * 	12.测试工具包中hasText()，该方法是过滤String参数空格后判断是否有值，
+	 * 如果你有该功能方法，但不是这个方法名不扣分。如果没有该方法，必须现在编写该方法
+	 * @param src
 	 * @return
 	 */
 	public static String toHtml(String src) {
