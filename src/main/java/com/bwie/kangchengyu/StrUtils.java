@@ -188,5 +188,20 @@ public class StrUtils {
 		return (!"".equals(string));
 	}
 	
+	/**
+	 * 	12.周考技能用
+	 * @param str
+	 * @return
+	 */
+	public static String toHtml(String src) {
+		
+		String[] strings = src.split("\\\\n");
+		StringBuilder sb = new StringBuilder();
+		for (String string : strings) {
+			sb.append("<p>").append(string).append("</p>");
+		}
+		return sb.toString();
+	}
+	
 	
 }
