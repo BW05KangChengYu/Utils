@@ -119,7 +119,7 @@ public class StrUtils {
 	}
 	
 	/**
-	 * 	随机获取一个中文汉字
+	 * 	8.1 随机获取一个中文汉字
 	 * @return
 	 */
 	private static String getOneCn() {
@@ -146,4 +146,47 @@ public class StrUtils {
 		return str;
 
 	}
+	
+	/**
+	* 	9.方法功能：根据正则在字符串提取一段值，用于后面在url地址里提取ID值。
+	* 例如在“http://news.cnstock.com/news,yw-201908-4413224.htm”把“4413224”提取出来。
+	*/
+	public static String getPlaceholderValue(String src, String regex){
+		//TODO 实现代码
+        Pattern pattern = Pattern.compile(regex);// 匹配的模式  
+        Matcher m = pattern.matcher(src);  
+        boolean find = m.find();
+        if(find) {
+        	String group = m.group(0);
+        	 return group.substring(1,group.lastIndexOf('.'));
+        }
+        return "";
+	}
+	
+	//测试工具包中isNumber()，
+	/**
+	 * 	10.是否是数字
+	 * @param src
+	 * @return
+	 */
+	public static boolean isNumber(String src) {
+		//String regix="[0-9]{1,}(\\.?|[0-9]*)";
+		String regix="[0-9]{1,}\\.?[0-9]*";
+		return src.matches(regix);
+		
+		
+	}
+	
+	/**
+	 * 11.测试工具包中hasText()，该方法是过滤String参数空格后判断是否有值，
+	 * 如果你有该功能方法，但不是这个方法名不扣分。如果没有该方法，必须现在编写该方法
+	 * @param src
+	 * @return
+	 */
+	public static boolean hasText(String src) {
+		String string = src.replaceAll("\\s", "");
+		return (!"".equals(string));
+	}
+	
+	
 }
