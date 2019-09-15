@@ -1,5 +1,10 @@
 package com.bwie.test;
 
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap.KeySetView;
+
 import org.junit.Test;
 
 import com.bwie.kangchengyu.StrUtils;
@@ -99,5 +104,44 @@ public class TestStringUtils {
 		String html = StrUtils.toHtml(str);
 		System.out.println("html is " + html);
 		
+	}
+	@Test
+	public void testString() {
+		String str= " Because TreeNodes are about twice the size of regular nodes, we" + 
+				"use them only when bins contain enough nodes to warrant use" + 
+				"(see TREEIFY_THRESHOLD). And when they become too small (due to" + 
+				"removal or resizing) they are converted back to plain bins.  In" + 
+				"usages with well-distributed user hashCodes, tree bins are" + 
+				"rarely used.  Ideally, under random hashCodes, the frequency of" + 
+				"nodes in bins follows a Poisson distribution" + 
+				"(http://en.wikipedia.org/wiki/Poisson_distribution) with a" + 
+				"parameter of about 0.5 on average for the default resizing" + 
+				"threshold of 0.75, although with a large variance because of" + 
+				"resizing granularity. Ignoring variance, the expected" + 
+				"occurrences of list size k are (exp(-0.5) * pow(0.5, k) /" + 
+				"factorial(k)). The first values are";
+		 char[] charArr = str.toCharArray();
+		 HashMap<Character, Integer> map = new HashMap<>();
+			for (char c : charArr) {
+				if ((c>='A'&&c<='Z')||(c>='a'&&c<='z')) {
+					Integer integer = map.get(c);
+					if (integer==null) {
+						map.put(c, 1);
+					}else {
+						map.put(c, integer+1);
+					}
+		 
+				}
+				
+			}
+			// System.out.println(map);
+			for (Character key : map.keySet()) {
+				System.out.println(key + "=" + map.get(key));
+			}
+			
+			String[] split = str.split(" ");
+			for (String string : split) {
+				System.out.println(string);
+			}
 	}
 }
