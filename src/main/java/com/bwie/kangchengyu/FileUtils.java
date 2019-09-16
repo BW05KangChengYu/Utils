@@ -20,43 +20,43 @@ public class FileUtils {
 public static Logger log = Logger.getLogger(File.class); 
 	
 	/**
-	 * хГ╧Шйгд©б╪ё╛тРобцФ╣днд╪Ч╨мкЫспвсд©б╪жп╣днд╪Ч╤╪р╙и╬ЁЩ
-	     й╧сц╣щ╧И║ёиФ╪╟дзхщ║ёеп╤од©б╪╣д╢Фтзптё╛еп╤ойг╥Ян╙д©б╪╩Рнд╪Чё╛и╬ЁЩ║ё
+	 * О©╫О©╫О©╫О©╫О©╫д©б╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫О©╫д©б╪О©╫п╣О©╫О©╫д╪О©╫О©╫О©╫р╙и╬О©╫О©╫
+	     й╧О©╫ц╣щ╧И║ёО©╫Ф╪╟О©╫О©╫О©╫щ║О©╫О©╫п╤О©╫д©б╪О©╫д╢О©╫О©╫О©╫О©╫тёО©╫О©╫п╤О©╫О©╫г╥О©╫н╙д©б╪О©╫О©╫О©╫д╪О©╫О©╫О©╫и╬О©╫О©╫О©╫О©╫
 
 	 * @param fileName
 	 */
 	public static void delFilePath(String fileName) {
 		
 		File file = new File(fileName);
-		// нд╪Ч╡╩╢Фтз  тРж╠╫с╥╣╩ь
+		// О©╫д╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫  О©╫О©╫ж╠О©╫с╥О©╫О©╫О©╫
 		if(!file.exists()) {
 			return;
 		}
 		
-		// хГ╧Шйгнд╪Ч  тРи╬ЁЩ╨С╥╣╩ь
+		// О©╫О©╫О©╫О©╫О©╫О©╫д╪О©╫  О©╫О©╫и╬О©╫О©╫О©╫С╥╣╩О©╫
 		if(file.isFile()) {
-			log.info(" и╬ЁЩнд╪Ч " + fileName);
+			log.info(" и╬О©╫О©╫О©╫д╪О©╫ " + fileName);
 			file.delete();
 			return;
 		}
 		
-		//хГ╧Шйгд©б╪
+		//О©╫О©╫О©╫О©╫О©╫д©б╪
 		if(file.isDirectory()) {
-			// тРапЁЖд©б╪обкЫсп╣двсд©б╪╨мнд╪Ч
+			// О©╫О©╫О©╫пЁО©╫д©б╪О©╫О©╫О©╫О©╫О©╫п╣О©╫О©╫О©╫д©б╪О©╫О©╫О©╫д╪О©╫
 			 String[] list = file.list();
-			 //уК╤тц©р╩оН
+			 //О©╫О©╫О©╫ц©р╩О©╫О©╫
 			 for (String subPath : list) {
-				 //╣Всци╬ЁЩ╧╕дэ
+				 //О©╫О©╫О©╫О©╫и╬О©╫О©╫О©╫О©╫О©╫О©╫
 				 delFilePath(fileName + "/" + subPath);
 			}
-			 log.info(" ------------ и╬ЁЩнд╪Ч ╪п ё╨ " + fileName); 
+			 log.info(" ------------ и╬О©╫О©╫О©╫д╪О©╫ О©╫О©╫ О©╫О©╫ " + fileName); 
 			file.delete(); 
 		}
 		
 		
 	}
 	
-	//3.5.2╩Ях║нд╪Чю╘у╧цШ
+	//3.5.2О©╫О©╫х║О©╫д╪О©╫О©╫О©╫у╧О©╫О©╫
 	/**
 	 * 
 	 * @param fileName
@@ -64,11 +64,11 @@ public static Logger log = Logger.getLogger(File.class);
 	 */
 	public static String getSuffix(String fileName) {
 		int dotIndex = fileName.lastIndexOf('.');
-		//ц╩спю╘у╧цШ
+		//ц╩О©╫О©╫О©╫О©╫у╧О©╫О©╫
 		if(dotIndex<0) {
 			return "";
 		}
-		//вН╨Ср╩н╩йг .
+		//О©╫О©╫О©╫р╩н╩О©╫О©╫ .
 		if(dotIndex>=fileName.length()) {
 			return "";
 		}
@@ -89,7 +89,7 @@ public static Logger log = Logger.getLogger(File.class);
 	}
 	
 	/**
-	 * ╥╣╩ьнд╪Чртж╦╤╗╣╔н╩╢Сп║╠Мй╬
+	 * О©╫О©╫О©╫О©╫О©╫д╪О©╫О©╫О©╫ж╦О©╫О©╫О©╫О©╫н╩О©╫О©╫п║О©╫О©╫й╬
 	 */
 	public long  getSize(String fileName,FileUnit fileUnit) {
 		File file = new File(fileName);
