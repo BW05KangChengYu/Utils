@@ -23,9 +23,10 @@ public void tohtml() {
 	System.out.println(html);
 }
 
+
 @Test
 public void testFileToBean() throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, IOException {
-	String fileNameString="F:\\涓撲笟璧勬枡\\灏忓疄璁璡\1705D\\Utils\\src\\main\\resources\\reginfo";
+	String fileNameString="F:\\专业资料\\小实训\\1705D\\Utils\\src\\main\\resources\\reginfo";
 	List list= FileUtils.fileToBean(fileNameString,RegisterInfo.class.getConstructor(
 			String.class,String.class,String.class,String.class,String.class,
 			String.class,String.class,String.class,String.class,String.class

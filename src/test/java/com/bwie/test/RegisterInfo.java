@@ -2,11 +2,13 @@ package com.bwie.test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+/**
+ * 
+ * @author apple
+ *
+ */
 public class RegisterInfo {
-	//于克祥|男|北京市|北京铁研建设监理有限责任公司|工程机械|房屋建筑工程|电力工程|90164|11007719|2021.06.15
-	
-			//“ID，姓名，性别，省市，申请注册单位，所学专业，申请注册专业1，申请注册专业2，执业资格证书编号，注册号，有效期
+
 			private Integer id;
 			private String name ;
 			private String sex ;
